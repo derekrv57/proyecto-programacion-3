@@ -5,14 +5,16 @@
 
 package gui;
 
+import datos.usuaro.usuario;
+
 /**
  *
  * @author derek
  */
-public class fMain extends javax.swing.JFrame {
+public class fEmpleado extends javax.swing.JFrame {
 
-    /** Creates new form fMain */
-    public fMain() {
+    /** Creates new form fEmpleado */
+    public fEmpleado(usuario usu) {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -26,7 +28,7 @@ public class fMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

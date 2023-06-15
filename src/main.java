@@ -1,5 +1,7 @@
 
-import gui.fMain;
+import gui.fLogin;
+
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -39,7 +41,7 @@ public class main {
             java.util.logging.Logger.getLogger(main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        new fMain().setVisible(true);
+        new fLogin(null).setVisible(true);
     }
 
 }
