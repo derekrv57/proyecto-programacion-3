@@ -1,3 +1,6 @@
+
+import gui.fMain;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
@@ -36,7 +39,7 @@ public class main {
             java.util.logging.Logger.getLogger(main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        // TODO code application logic here
+        new fMain().setVisible(true);
     }
 
 }
