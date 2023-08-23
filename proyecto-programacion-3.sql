@@ -1,161 +1,137 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
+CREATE DATABASE  IF NOT EXISTS `proyecto-programacion-3` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `proyecto-programacion-3`;
+-- MySQL dump 10.13  Distrib 8.0.34, for Linux (x86_64)
 --
--- Host: localhost
--- Generation Time: Aug 23, 2023 at 05:37 AM
--- Server version: 8.0.34-0ubuntu0.22.04.1
--- PHP Version: 8.1.7
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: proyecto-programacion-3
+-- ------------------------------------------------------
+-- Server version	8.0.34-0ubuntu0.22.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
--- Crear un nuevo usuario
-CREATE USER 'user'@'localhost' IDENTIFIED BY 'access';
-
--- Otorgar los privilegios de base de datos y sistema al usuario
-GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE, CREATE ROLE, DROP ROLE ON *.* TO 'user'@'localhost';
-
--- Otorgar otros privilegios específicos al usuario
-GRANT APPLICATION_PASSWORD_ADMIN, AUDIT_ABORT_EXEMPT, AUDIT_ADMIN, AUTHENTICATION_POLICY_ADMIN, BACKUP_ADMIN, BINLOG_ADMIN, BINLOG_ENCRYPTION_ADMIN, CLONE_ADMIN, CONNECTION_ADMIN, ENCRYPTION_KEY_ADMIN, FIREWALL_EXEMPT, FLUSH_OPTIMIZER_COSTS, FLUSH_STATUS, FLUSH_TABLES, FLUSH_USER_RESOURCES, GROUP_REPLICATION_ADMIN, GROUP_REPLICATION_STREAM, INNODB_REDO_LOG_ARCHIVE, INNODB_REDO_LOG_ENABLE, PASSWORDLESS_USER_ADMIN, PERSIST_RO_VARIABLES_ADMIN, REPLICATION_APPLIER, REPLICATION_SLAVE_ADMIN, RESOURCE_GROUP_ADMIN, RESOURCE_GROUP_USER, ROLE_ADMIN, SENSITIVE_VARIABLES_OBSERVER, SERVICE_CONNECTION_ADMIN, SESSION_VARIABLES_ADMIN, SET_USER_ID, SHOW_ROUTINE, SYSTEM_USER, SYSTEM_VARIABLES_ADMIN, TABLE_ENCRYPTION_ADMIN, TELEMETRY_LOG_ADMIN, XA_RECOVER_ADMIN ON *.* TO 'user'@'localhost';
-
-
---
--- Database: `proyecto-programacion-3`
---
-
--- --------------------------------------------------------
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Table structure for table `cliente`
 --
 
+DROP TABLE IF EXISTS `cliente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cliente` (
   `cedula` varchar(10) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `telefono` varchar(12) NOT NULL,
-  `direccion` text NOT NULL
+  `direccion` text NOT NULL,
+  PRIMARY KEY (`cedula`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `cliente`
+--
+
 -- Table structure for table `empleado`
 --
 
+DROP TABLE IF EXISTS `empleado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `empleado` (
   `cedula` varchar(10) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `contra` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `salario` float DEFAULT NULL,
-  `puesto` varchar(30) NOT NULL
+  `puesto` varchar(30) NOT NULL,
+  PRIMARY KEY (`cedula`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `empleado`
+--
+
+
 -- Table structure for table `producto`
 --
 
+DROP TABLE IF EXISTS `producto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `producto` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `producto` varchar(50) NOT NULL,
   `precio` float NOT NULL,
   `cantidad` int NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
--- --------------------------------------------------------
+--
+-- Dumping data for table `producto`
+--
 
 --
 -- Table structure for table `proveedor`
 --
 
+DROP TABLE IF EXISTS `proveedor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `proveedor` (
-  `id` int NOT NULL,
-  `empresa` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `empresa` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
--- --------------------------------------------------------
+--
+-- Dumping data for table `proveedor`
+--
+
+LOCK TABLES `proveedor` WRITE;
+/*!40000 ALTER TABLE `proveedor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `proveedor` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `venta`
 --
 
+DROP TABLE IF EXISTS `venta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `venta` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `monto` float NOT NULL,
   `productos` text NOT NULL,
   `metodo_pago` varchar(50) NOT NULL,
   `comprador` varchar(50) NOT NULL,
   `vendedor` varchar(50) NOT NULL,
-  `fecha` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `venta`
 --
 
---
--- Indexes for table `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`cedula`);
 
---
--- Indexes for table `empleado`
---
-ALTER TABLE `empleado`
-  ADD PRIMARY KEY (`cedula`);
 
---
--- Indexes for table `producto`
---
-ALTER TABLE `producto`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `proveedor`
---
-ALTER TABLE `proveedor`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `venta`
---
-ALTER TABLE `venta`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `producto`
---
-ALTER TABLE `producto`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `proveedor`
---
-ALTER TABLE `proveedor`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `venta`
---
-ALTER TABLE `venta`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-COMMIT;
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-08-23 15:29:06

@@ -8,10 +8,6 @@ package gui;
 import datos.cliente;
 import logica.logicaCliente;
 
-/**
- *
- * @author derek
- */
 public class fSelCliente extends javax.swing.JDialog {
     boolean busqueda = false;
     int cantDatos;

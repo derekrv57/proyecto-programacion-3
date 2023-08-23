@@ -4,10 +4,6 @@
  */
 package datos;
 
-/**
- *
- * @author derek
- */
 public class md5 {
     public String getMD5(String s){
         try {

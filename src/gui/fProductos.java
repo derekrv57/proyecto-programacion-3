@@ -9,10 +9,6 @@ import datos.producto;
 import javax.swing.JOptionPane;
 import logica.logicaProducto;
 
-/**
- *
- * @author derek
- */
 public class fProductos extends javax.swing.JDialog {
     boolean editar = false;
     int cantDatos;

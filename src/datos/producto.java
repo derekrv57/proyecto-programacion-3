@@ -4,18 +4,12 @@
  */
 package datos;
 
-/**
- *
- * @author derek
- */
 public class producto {
     private int id;
     private String producto;
     private int cantidad;
     private String descripcion;
     private float precio;
-    
-    
     
     public int getId() {
         return id;

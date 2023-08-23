@@ -4,10 +4,7 @@
  */
 package datos;
 
-/**
- *
- * @author derek
- */
+
 public class contra {
 
     public String encriptar(String contra) {

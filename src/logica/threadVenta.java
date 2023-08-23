@@ -6,10 +6,6 @@ package logica;
 
 import gui.fVenta;
 
-/**
- *
- * @author derek
- */
 public class threadVenta extends Thread{
     fVenta v;
 

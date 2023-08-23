@@ -4,10 +4,6 @@
  */
 package datos;
 
-/**
- *
- * @author derek
- */
 public class usuario {
     private String cedula, nombre, contra, puesto;
     float salario;

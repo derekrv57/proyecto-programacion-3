@@ -11,10 +11,6 @@ import java.awt.Component;
 import javax.swing.JOptionPane;
 import logica.logicaUsuario;
 
-/**
- *
- * @author derek
- */
 public class fRegistro extends javax.swing.JFrame {
     boolean login;
     /** Creates new form fRegistro */

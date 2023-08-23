@@ -14,10 +14,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import mysql.coneccion;
 
-/**
- *
- * @author derek
- */
 public class logicaUsuario {
     public usuario[] seleccionar(String filtro) {
         try {

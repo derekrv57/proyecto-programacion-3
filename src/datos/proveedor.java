@@ -4,10 +4,6 @@
  */
 package datos;
 
-/**
- *
- * @author derek
- */
 public class proveedor {
     private int id;
     private String empresa;

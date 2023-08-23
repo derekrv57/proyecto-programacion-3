@@ -8,10 +8,6 @@ package gui;
 import datos.contra;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author derek
- */
 public class fCambioContra extends javax.swing.JDialog {
     String cedula;
     /** Creates new form fCambioContra */

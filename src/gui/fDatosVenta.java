@@ -14,10 +14,6 @@ import logica.logicaVenta;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author derek
- */
 public class fDatosVenta extends javax.swing.JDialog {
     javax.swing.JInternalFrame parent;
     float monto;

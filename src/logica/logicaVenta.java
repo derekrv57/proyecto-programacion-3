@@ -14,10 +14,6 @@ import java.sql.Statement;
 import java.util.List;
 import mysql.coneccion;
 
-/**
- *
- * @author derek
- */
 public class logicaVenta {
     public venta[] seleccionar(String filtro) {
         try {

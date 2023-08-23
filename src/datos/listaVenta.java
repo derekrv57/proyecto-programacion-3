@@ -4,10 +4,6 @@
  */
 package datos;
 
-/**
- *
- * @author derek
- */
 public class listaVenta {
     private int id, cantidad;
 

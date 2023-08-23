@@ -4,10 +4,6 @@
  */
 package datos;
 
-/**
- *
- * @author derek
- */
 public class cliente {
     private String cedula, nombre, telefono, direccion;
 

@@ -9,10 +9,6 @@ import datos.cliente;
 import javax.swing.JOptionPane;
 import logica.logicaCliente;
 
-/**
- *
- * @author derek
- */
 public class fClientes extends javax.swing.JDialog {
     boolean editar = false;
     int cantDatos;

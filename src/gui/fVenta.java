@@ -12,10 +12,6 @@ import datos.listaVenta;
 import datos.usuario;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author derek
- */
 public class fVenta extends javax.swing.JInternalFrame {
     public producto[] productos;
     List<listaVenta> lista = new ArrayList<>();

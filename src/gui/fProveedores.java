@@ -9,10 +9,6 @@ import datos.proveedor;
 import javax.swing.JOptionPane;
 import logica.logicaProveedor;
 
-/**
- *
- * @author derek
- */
 public class fProveedores extends javax.swing.JDialog {
     boolean editar = false;
     int cantDatos;

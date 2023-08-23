@@ -5,10 +5,6 @@
 
 package gui;
 
-/**
- *
- * @author derek
- */
 public class fBuscar extends javax.swing.JDialog {
     public boolean busqueda = false;
     /** Creates new form fBuscar */

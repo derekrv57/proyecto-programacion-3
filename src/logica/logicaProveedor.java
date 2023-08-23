@@ -12,10 +12,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import mysql.coneccion;
 
-/**
- *
- * @author derek
- */
 public class logicaProveedor {
     public proveedor[] seleccionar(String filtro) {
         try {

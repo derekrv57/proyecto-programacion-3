@@ -9,10 +9,6 @@ import datos.usuario;
 import javax.swing.JOptionPane;
 import logica.logicaUsuario;
 
-/**
- *
- * @author derek
- */
 public class fEmpleados extends javax.swing.JDialog {
     int cantDatos;
     logicaUsuario logica = new logicaUsuario();

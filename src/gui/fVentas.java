@@ -9,10 +9,6 @@ import datos.venta;
 import javax.swing.JOptionPane;
 import logica.logicaVenta;
 
-/**
- *
- * @author derek
- */
 public class fVentas extends javax.swing.JDialog {
     int cantDatos;
     logicaVenta logica = new logicaVenta();

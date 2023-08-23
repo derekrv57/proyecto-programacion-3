@@ -10,10 +10,6 @@ import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author derek
- */
 public class fMain extends javax.swing.JFrame {
     usuario usu;
     /** Creates new form fEmpleado */
