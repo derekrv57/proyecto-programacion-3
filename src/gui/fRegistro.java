@@ -5,20 +5,26 @@
 
 package gui;
 
-import datos.usuaro.usuario;
+import datos.contra;
+import datos.usuario;
 import java.awt.Component;
 import javax.swing.JOptionPane;
+import logica.logicaUsuario;
 
 /**
  *
  * @author derek
  */
 public class fRegistro extends javax.swing.JFrame {
-
+    boolean login;
     /** Creates new form fRegistro */
     public fRegistro(Component c) {
         initComponents();
         this.setLocationRelativeTo(c);
+        login = c.getName().equals("frame0");
+        chbIniciarSesion.setSelected(login);
+        chbIniciarSesion.setVisible(login);
+        lblLogin.setVisible(login);
     }
 
     /** This method is called from within the constructor to
@@ -31,7 +37,7 @@ public class fRegistro extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
+        txtCedula = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtContra = new javax.swing.JPasswordField();
         lblLogin = new javax.swing.JLabel();
@@ -40,18 +46,20 @@ public class fRegistro extends javax.swing.JFrame {
         btnRegistrar = new javax.swing.JButton();
         chbIniciarSesion = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
-        txtCedula = new javax.swing.JTextField();
+        txtCargo = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        spnSalario = new javax.swing.JSpinner();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registro");
         setLocationByPlatform(true);
         setResizable(false);
 
-        jLabel1.setText("Usuario:");
+        jLabel1.setText("Cedula:");
 
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+        txtCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
+                txtCedulaActionPerformed(evt);
             }
         });
 
@@ -92,13 +100,15 @@ public class fRegistro extends javax.swing.JFrame {
         chbIniciarSesion.setText("Iniciar sesion");
         chbIniciarSesion.setToolTipText("");
 
-        jLabel4.setText("Cedula:");
+        jLabel4.setText("Cargo");
 
-        txtCedula.addActionListener(new java.awt.event.ActionListener() {
+        txtCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCedulaActionPerformed(evt);
+                txtCargoActionPerformed(evt);
             }
         });
+
+        jLabel5.setText("Salario:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,7 +117,7 @@ public class fRegistro extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtUsuario)
+                    .addComponent(txtCedula)
                     .addComponent(txtContra)
                     .addComponent(txtNombre)
                     .addGroup(layout.createSequentialGroup()
@@ -116,14 +126,16 @@ public class fRegistro extends javax.swing.JFrame {
                         .addComponent(chbIniciarSesion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnRegistrar))
-                    .addComponent(txtCedula)
+                    .addComponent(txtCargo)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(spnSalario))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -132,7 +144,7 @@ public class fRegistro extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -142,10 +154,14 @@ public class fRegistro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(spnSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrar)
                     .addComponent(lblLogin)
@@ -161,10 +177,10 @@ public class fRegistro extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_lblLoginMouseClicked
 
-    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
-        txtUsuario.setText(txtUsuario.getText().toLowerCase());
+    private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
+        txtCedula.setText(txtCedula.getText().toLowerCase());
         txtContra.requestFocus();
-    }//GEN-LAST:event_txtUsuarioActionPerformed
+    }//GEN-LAST:event_txtCedulaActionPerformed
 
     private void txtContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraActionPerformed
         txtNombre.requestFocus();
@@ -175,12 +191,12 @@ public class fRegistro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        txtUsuario.setText(txtUsuario.getText().toLowerCase());
+        txtCedula.setText(txtCedula.getText().toLowerCase());
         String err = "";
-        String usuario = txtUsuario.getText();
+        String usuario = txtCedula.getText();
         String contra = txtContra.getText();
         String nombre = txtNombre.getText();
-        String cedula = txtCedula.getText();
+        String cedula = txtCargo.getText();
         if (usuario.equals("")) {
             err +="Usuario no valido\n";
         }
@@ -194,18 +210,27 @@ public class fRegistro extends javax.swing.JFrame {
             err += "Cedula no valida\n";
         }
         if (err.equals("")) {
-            if (new usuario().registrar(this, usuario, contra, nombre, cedula, "usuario")) {
+            usuario u = new logica.logicaUsuario().registrar(this, txtCedula.getText(), txtNombre.getText(), new contra().encriptar(txtContra.getText()), Float.parseFloat(String.valueOf(spnSalario.getValue())), txtCargo.getText());
+            if (u != null) {
                 if (chbIniciarSesion.isSelected()) {
-                    usuario usu = new usuario();
-                    usu = usu.login(this, usuario, contra);
-                    if (usu != null) {
-                        new fCliente(usu).setVisible(true);
+                    u = new logicaUsuario().login(this, u);
+                    if (u != null) {
+                        new fMain(u).setVisible(true);
                     }
                 }
                 else{
-                    new fLogin(this).setVisible(true);
+                    if (login) {
+                        new fLogin(this).setVisible(true);
+                    }
+                    else{
+                        this.dispose();
+                        new fEmpleados(this, true).setVisible(true);
+                    }
                 }
                 this.dispose();
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "No se pudo registrar el usuario");
             }
         }
         else{
@@ -213,9 +238,9 @@ public class fRegistro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
-    private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCedulaActionPerformed
+    private void txtCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoActionPerformed
+        btnRegistrarActionPerformed(null);
+    }//GEN-LAST:event_txtCargoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
@@ -224,11 +249,13 @@ public class fRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblLogin;
+    private javax.swing.JSpinner spnSalario;
+    private javax.swing.JTextField txtCargo;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JPasswordField txtContra;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 
 }

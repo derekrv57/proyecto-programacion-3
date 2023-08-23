@@ -5,9 +5,11 @@
 
 package gui;
 
-import datos.usuaro.usuario;
+import datos.contra;
+import datos.usuario;
 import java.awt.Component;
 import javax.swing.JOptionPane;
+import logica.logicaUsuario;
 
 /**
  *
@@ -142,16 +144,14 @@ public class fLogin extends javax.swing.JFrame {
             err += "Contraseña no valida\n";
         }
         if (err.equals("")) {
-            usuario usu = new usuario();
-            usu = usu.login(this, usuario, contra);
-            if (usu != null) {
+            usuario u = new usuario(txtUsuario.getText(), new contra().encriptar(txtContra.getText()));
+            u = new logicaUsuario().login(this, u);
+            if (u != null) {
                 this.dispose();
-                if (usu.getTipo().equals("empleado")) {
-                    new fEmpleado(usu).setVisible(true);
-                }
-                else{
-                    new fCliente(usu).setVisible(true);
-                }
+                new fMain(u).setVisible(true);
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Credenciales incorrectas");
             }
         } else {
             JOptionPane.showMessageDialog(this, err);
