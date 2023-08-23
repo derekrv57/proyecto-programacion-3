@@ -378,11 +378,15 @@ public class fClientes extends javax.swing.JDialog {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        agregarUsuario();
+    }//GEN-LAST:event_btnNuevoActionPerformed
+
+    public void agregarUsuario(){
         pnlEditor.setName("Nuevo");
         mostrar("", "", "", "");
         editar = false;
-    }//GEN-LAST:event_btnNuevoActionPerformed
-
+    }
+    
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         pnlEditor.setName("Editar");
         if (tblData.getSelectedRow() >= 0) {

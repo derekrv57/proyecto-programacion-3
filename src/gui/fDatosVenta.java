@@ -26,7 +26,7 @@ public class fDatosVenta extends javax.swing.JDialog {
     List<producto> lista = new ArrayList<>();
     /** Creates new form fDatosVenta */
     public fDatosVenta(javax.swing.JInternalFrame parent, TableModel m, float total, usuario usu) {
-        super(new fMain(null), true);
+        super(new fMain(usu), true);
         this.setLocationRelativeTo(parent);
         this.parent = parent;
         this.monto = total;
@@ -275,7 +275,10 @@ public class fDatosVenta extends javax.swing.JDialog {
     private void btnSelClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelClienteActionPerformed
         cliente c = new cliente();
         c = new fSelCliente(this).buscar();
-        txtCliente.setText(c.getCedula() + " (" + c.getNombre() + ")");
+        try {
+            txtCliente.setText(c.getCedula() + " (" + c.getNombre() + ")");
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_btnSelClienteActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed

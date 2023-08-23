@@ -52,6 +52,7 @@ public class fSelCliente extends javax.swing.JDialog {
         btnBuscar = new javax.swing.JButton();
         btnIndex = new javax.swing.JButton();
         btnSeleccionar = new javax.swing.JButton();
+        btnNuevo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Seleccione un cliente");
@@ -197,6 +198,13 @@ public class fSelCliente extends javax.swing.JDialog {
             }
         });
 
+        btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -209,6 +217,8 @@ public class fSelCliente extends javax.swing.JDialog {
                         .addComponent(btnBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnIndex)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnNuevo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSeleccionar)))
                 .addContainerGap())
@@ -222,7 +232,8 @@ public class fSelCliente extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscar)
                     .addComponent(btnIndex)
-                    .addComponent(btnSeleccionar))
+                    .addComponent(btnSeleccionar)
+                    .addComponent(btnNuevo))
                 .addContainerGap())
         );
 
@@ -252,6 +263,13 @@ public class fSelCliente extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnSeleccionarActionPerformed
 
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        fClientes f = new fClientes(null, true);
+        f.agregarUsuario();
+        f.setVisible(true);
+        mostrar("");
+    }//GEN-LAST:event_btnNuevoActionPerformed
+
     void mostrar(String filtro) {
         btnIndex.setVisible(!filtro.equals(""));
         for (int i = 0; i < 100; i++) {
@@ -275,6 +293,7 @@ public class fSelCliente extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnIndex;
+    private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnSeleccionar;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable tblData;

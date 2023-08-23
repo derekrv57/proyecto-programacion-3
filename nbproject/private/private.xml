@@ -3,15 +3,35 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/archivo.java</file>
-            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/md5.java</file>
-            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/logica/logicaUsuario.java</file>
-            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/contra.java</file>
-            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fRegistro.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fCambioContra.java</file>
             <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fMain.java</file>
-            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/usuario.java</file>
-            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fLogin.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fProveedores.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/mysql/coneccion.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/logica/logicaVenta.java</file>
             <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/main.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fProductos.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fClientes.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fBuscar.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fDatosVenta.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/md5.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/proveedor.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fSelCliente.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/logica/logicaCliente.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/cliente.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/logica/logicaUsuario.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fRegistro.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/producto.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fVentas.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fVenta.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/contra.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/listaVenta.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fEmpleados.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/logica/threadVenta.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/logica/logicaProducto.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/usuario.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/logica/logicaProveedor.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/gui/fLogin.java</file>
+            <file>file:/home/derek/NetBeansProjects/proyecto-programacion-3/src/datos/venta.java</file>
         </group>
     </open-files>
 </project-private>
